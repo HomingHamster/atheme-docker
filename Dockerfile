@@ -50,10 +50,8 @@ RUN echo "$ATHEME_UID" > /.atheme_uid
 COPY entrypoint.sh /
 
 RUN adduser -D -h /atheme -u $ATHEME_UID atheme
-RUN chown -R atheme /atheme
-USER atheme
-
-# Services config & DB
 VOLUME /atheme/etc
+USER atheme
+RUN chown -R atheme /atheme
 
 ENTRYPOINT ["/entrypoint.sh"]
