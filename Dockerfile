@@ -51,7 +51,8 @@ COPY entrypoint.sh /
 
 RUN adduser -D -h /atheme -u $ATHEME_UID atheme
 VOLUME /atheme/etc
-USER atheme
 RUN chown -R atheme /atheme
+
+USER atheme
 
 ENTRYPOINT ["/entrypoint.sh"]
