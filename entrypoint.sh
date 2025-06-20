@@ -1,4 +1,4 @@
-h #!/bin/sh
+#!/bin/sh
 
 DATADIR=/atheme/etc
 if ! test -w "$DATADIR/"; then
