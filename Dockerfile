@@ -52,6 +52,7 @@ COPY entrypoint.sh /
 RUN adduser -D -h /atheme -u $ATHEME_UID atheme
 VOLUME /atheme/etc
 RUN chown -R atheme /atheme
+RUN chown -R 10000:10000 /atheme/etc
 
 USER atheme
 
