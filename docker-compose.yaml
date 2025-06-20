@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  atheme:
+    container_name: atheme
+    build:
+      context: .
+      args:
+        ATHEME_UID: 10000
+        ATHEME_VERSION: "7.2.12"  # Must be quoted
+        BUILD_CONTRIB_MODULES: ""   # Set to "1" to enable contrib modules
+        MAKE_NUM_JOBS: 4           # Optional: Number of parallel build jobs
+    volumes:
+      - /home/ubuntu/cognisaIRC/atheme/etc:/atheme/etc
+    restart: unless-stopped
+    networks:
+      - irc
+    user: "10000:10000"  # Matches ATHEME_UID
+  
+networks:
+  irc:
+    external: true
