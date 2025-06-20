@@ -1,4 +1,4 @@
-#!/bin/sh
+h #!/bin/sh
 
 DATADIR=/atheme/etc
 if ! test -w "$DATADIR/"; then
@@ -19,4 +19,4 @@ if test -f "$TMPPATH" && ! test -w "$TMPPATH"; then
 fi
 
 rm -f /atheme/var/atheme.pid
-/atheme/atheme-services -n "$@"
+eaco ls /atheme/
